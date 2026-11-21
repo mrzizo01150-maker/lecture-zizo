@@ -1,0 +1,9 @@
+pyrogram
+
+TgCrypto
+
+groq
+
+google-generativeai
+
+python-dotenv
