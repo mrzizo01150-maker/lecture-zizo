@@ -3,6 +3,7 @@ import asyncio
 from pyrogram import Client, filters
 from groq import Groq
 import google.generativeai as genai
+# trigger rebuild
 
 # 1. إعداد المفاتيح (حط بياناتك مكان النصوص اللي بين علامات التنصيص)
 API_ID = 36076153  # ده رقمك اللي ظهر في الشاشة
