@@ -7,7 +7,7 @@ import google.generativeai as genai
 # 1. إعداد المفاتيح (حط بياناتك مكان النصوص اللي بين علامات التنصيص)
 API_ID = 36076153  # ده رقمك اللي ظهر في الشاشة
 API_HASH = "6ab8b46a8318d737ba7a8d4d52169198"
-BOT_TOKEN = "9200125185:AAHArtBCvRs6swYocxiTZHqCG E8H1qvvmVA"
+BOT_TOKEN = BOT_TOKEN = os.getenv('BOT_TOKEN')
 GROQ_API_KEY = "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"
 GEMINI_API_KEY = "AQ.Ab8RN6JrywoHURoF73YobAEM0SrfJmL2hxsck-NNja4qI7gJrA"
 
