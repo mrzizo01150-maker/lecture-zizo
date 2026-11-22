@@ -3,17 +3,24 @@ import asyncio
 from pyrogram import Client, filters
 from groq import Groq
 import google.generativeai as genai
-# trigger rebuild
 
-# 1. إعداد المفاتيح (حط بياناتك مكان النصوص اللي بين علامات التنصيص)
-API_ID = 36076153  # ده رقمك اللي ظهر في الشاشة
-API_HASH = "6ab8b46a8318d737ba7a8d4d52169198"
-BOT_TOKEN = "9200125185:AAGMGbdG7CFANDRao3nC6df_SF6C2_ocs38"
-GROQ_API_KEY = "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"
-GEMINI_API_KEY = "AQ.Ab8RN6JrywoHURoF73YobAEM0SrfJmL2hxsck-NNja4qI7gJrA"
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-# 2. تهيئة الأدوات
-app = Client("zizo_lecture_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN ,in_memory=True)
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+if not all([API_ID, API_HASH, BOT_TOKEN]):
+    raise ValueError("Missing Telegram environment variables!")
+
+app = Client(
+    "zizo_lecture_bot",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN,
+    in_memory=True
+)
 groq_client = Groq(api_key=GROQ_API_KEY)
 genai.configure(api_key=GEMINI_API_KEY)
 gemini_model = genai.GenerativeModel("gemini-2.5-flash")
