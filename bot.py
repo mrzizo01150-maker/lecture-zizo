@@ -12,7 +12,7 @@ GROQ_API_KEY = "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"
 GEMINI_API_KEY = "AQ.Ab8RN6JrywoHURoF73YobAEM0SrfJmL2hxsck-NNja4qI7gJrA"
 
 # 2. تهيئة الأدوات
-app = Client("zizo_lecture_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+app = Client("zizo_lecture_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN ,in_memory=True)
 groq_client = Groq(api_key=GROQ_API_KEY)
 genai.configure(api_key=GEMINI_API_KEY)
 gemini_model = genai.GenerativeModel("gemini-2.5-flash")
